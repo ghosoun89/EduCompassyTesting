@@ -5,6 +5,19 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+/*
+  Reading:
+  Express js API
+  https://expressjs.com/en/api.html
+
+  App Get Method:
+  https://expressjs.com/en/api.html#app.get.method
+
+  App Post Method:
+  https://expressjs.com/en/api.html#app.post.method
+
+*/
 app.get('/api/hi', (req, res) => {
   res.send({ express: 'Hi From Express' });
 });

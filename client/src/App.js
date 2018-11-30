@@ -31,6 +31,9 @@ class App extends Component {
 
 
   /*
+    
+    MDN Fetch() / jquery ajax()
+    
     Read about Fetch API: 
     https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
@@ -40,6 +43,11 @@ class App extends Component {
     Read about await:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
 
+    Notes how this function invoked:
+
+    - callApiHi on client load fetch for get /api/hi using componentDidMount()
+    - handleSubmitGET on button "Get /api/hello" clicked (using fetch get)
+    - handleSubmitPOST on button "Post /api/world" clicked (using fetch Post)
   */
   callApiHi = async () => {
     const response = await fetch('/api/hi');
@@ -151,7 +159,7 @@ class App extends Component {
               value={this.state.post}
               onChange={e => this.setState({ post: e.target.value })}
             />
-            <button type="submit">Submit</button>
+            <button type="submit">Post /api/world</button>
           </form>
           <p>{this.state.responseToPost}</p>
         </div>
